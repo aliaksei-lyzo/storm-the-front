@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { addItem, addItemAsync } from 'actions/items';
+import * as actions from 'actions/items';
 
 import style from 'stylesheet/main.scss';
 
 const App = ({ items, addItem, addItemAsync }) => (
   <div className={style.app}>
-    <button onClick={() => addItem({ id: Math.random() })}>submit sync test action to store</button>
-    <button onClick={() => addItemAsync({ id: Math.random() })}>submit async test action to store</button>
+    <button type="button" onClick={() => addItem({ id: Math.random() })}>submit sync test action to store</button>
+    <button type="button" onClick={() => addItemAsync({ id: Math.random() })}>submit async test action to store</button>
     {items.map(item => <p key={item.id}>{item.id}</p>)}
   </div>
 );
@@ -17,6 +17,8 @@ const App = ({ items, addItem, addItemAsync }) => (
 /* propTypes declaration */
 App.propTypes = {
   items: PropTypes.array,
+  addItem: PropTypes.func,
+  addItemAsync: PropTypes.func,
 };
 
 /* mapStateToProps, mapDispatchToProps for connect (redux store)  */
@@ -25,8 +27,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item)),
-  addItemAsync: item => dispatch(addItemAsync(item)),
+  addItem: item => dispatch(actions.addItem(item)),
+  addItemAsync: item => dispatch(actions.addItemAsync(item)),
 });
 
 
