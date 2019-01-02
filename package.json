@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate",
+  "name": "storm-the-front",
   "version": "0.0.1",
-  "description": "A boilerplate for react project",
+  "description": "storm the front project",
   "scripts": {
     "start": "webpack-dev-server",
     "build:prod": "webpack --config webpack.config.prod.js",
@@ -62,5 +62,6 @@
     "hooks": {
       "pre-push": "npm run eslint"
     }
+
   }
 }
