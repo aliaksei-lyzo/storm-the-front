@@ -4,7 +4,7 @@ import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
 import * as actions from 'actions/items';
 
-import style from 'stylesheet/main.scss';
+import style from './App.scss';
 
 const App = ({ items, addItem, addItemAsync }) => (
   <div className={style.app}>
