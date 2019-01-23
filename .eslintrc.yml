@@ -14,5 +14,6 @@ rules:
     react/no-did-mount-set-state: 0
     import/no-extraneous-dependencies: 0
     no-underscore-dangle: 0
+    global-require: 0
 settings:
   import/resolver: webpack
