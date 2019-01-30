@@ -8,8 +8,8 @@ import style from './App.scss';
 
 const App = ({ items, addItem, addItemAsync }) => (
   <div className={style.app}>
-    <button type="button" onClick={() => addItem({ id: Math.random() })}>submit sync test action to store</button>
-    <button type="button" onClick={() => addItemAsync({ id: Math.random() })}>submit async test action to store</button>
+    <button type="button" onClick={addItem.bind(this, { id: Math.random() })}>submit sync test action to store</button>
+    <button type="button" onClick={addItemAsync.bind(this, { id: Math.random() })}>submit async test action to store</button>
     {items.map(item => <p key={item.id}>{item.id}</p>)}
   </div>
 );
