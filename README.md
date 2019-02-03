@@ -22,4 +22,4 @@ Rebase and merge instructions:
 4) Open a PR.
 Quite often you'll face a situation, when an already opened PR faces conflicts. In that case, perform the steps above and just force push your branch, git will catch up all the changes.
 
-I'll open a separate issues, where you can earn extra points, by commenting on the pros and cons of such approach ;)
+There's a wiki page on branching and merging procedure, where you can earn extra points, by commenting on the pros and cons of such approach (just edit the page) ;)
