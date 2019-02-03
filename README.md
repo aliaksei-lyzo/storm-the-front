@@ -2,6 +2,8 @@
 The portal / website for Gomel Front-end developers community "Storm The Front".
 
 # Everybody is welcome to contribute, be it completing tasks or opening the new ones!
+Feel free to create branches in this repo (but beware, after PRs they will be removed without pity, unless labeled properly).
+Also, you can create forks and open PRs from your own forks, that works, too. Again, beware, forking won't save your branches from being ruthlessly deleted after merging PRs, unless labeled properly!
 
 # The developer's guide:
 We will be using a common GitFlow strategy for our development cycle, with some changes.
