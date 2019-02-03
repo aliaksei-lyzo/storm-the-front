@@ -1,0 +1,59 @@
+{
+  "name": "storm-the-front",
+  "version": "0.0.1",
+  "description": "storm the front project",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build:prod": "webpack --config webpack.config.prod.js",
+    "build:dev": "webpack --mode=development"
+  },
+  "keywords": [
+    "react",
+    "MCC",
+    "boilerplate",
+    "webpack",
+    "babel"
+  ],
+  "author": "Aliaksei Lyzo",
+  "license": "none",
+  "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-class-properties": "7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "autoprefixer": "9.1.5",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.4",
+    "clean-webpack-plugin": "0.1.19",
+    "css-loader": "1.0.0",
+    "eslint": "5.6.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-import-resolver-webpack": "0.10.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-react": "7.11.1",
+    "file-loader": "2.0.0",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "mini-css-extract-plugin": "0.4.3",
+    "node-sass": "4.9.3",
+    "postcss-loader": "3.0.0",
+    "react-hot-loader": "4.3.11",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.0",
+    "webpack": "4.20.2",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.9"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "isomorphic-fetch": "2.2.1",
+    "prop-types": "15.6.1",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "react-redux": "6.0.0",
+    "redux": "4.0.1",
+    "redux-thunk": "2.3.0"
+  }
+}
