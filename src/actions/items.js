@@ -1,7 +1,6 @@
 export const ADD_ITEM = 'ADD_ITEM';
 
 /* example sync action */
-
 export const addItem = item => ({
   type: ADD_ITEM,
   payload: {
