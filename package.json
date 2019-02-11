@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "storm the front project",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build:prod": "webpack --config webpack.config.prod.js",
-    "build:dev": "webpack --mode=development",
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:dev": "cross-env NODE_ENV=development webpack --mode=development",
     "eslint": "eslint ./src --ext js,jsx --max-warnings 5"
   },
   "keywords": [
@@ -51,17 +51,18 @@
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
+    "cross-env": "^5.2.0",
     "install": "^0.12.2",
     "isomorphic-fetch": "2.2.1",
     "prop-types": "15.6.1",
-    "react-redux": "6.0.0",
-    "redux": "4.0.1",
-    "redux-thunk": "2.3.0",
     "react": "16.7.0",
     "react-dom": "16.7.0",
+    "react-redux": "6.0.0",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
-    "redux-logger": "3.0.6"
+    "redux": "4.0.1",
+    "redux-logger": "3.0.6",
+    "redux-thunk": "2.3.0"
   },
   "husky": {
     "hooks": {
