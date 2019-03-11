@@ -70,7 +70,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run eslint && jest --coverage"
+      "pre-push": "npm run eslint && jest",
+      "pre-commit": "npm run eslint && jest"
     }
   },
   "jest": {
