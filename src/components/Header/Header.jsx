@@ -1,11 +1,11 @@
 import React from 'react';
 import Menu from 'components/Menu';
+import style from './Header.scss';
 
 const Header = () => (
-  <div>
-    HEADER
+  <header className={style.header}>
     <Menu />
-  </div>
+  </header>
 );
 
 /* propTypes declaration */

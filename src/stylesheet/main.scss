@@ -1,3 +1,6 @@
-@import
-  'constants/colors';
-
+@import 'normalize/normalize';
+@import 'base/base';
+@import 'constants/colors';
+@import 'constants/variables';
+@import 'grid/flexgrid';
+@import 'mixins/respond';

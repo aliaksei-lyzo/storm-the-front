@@ -1,0 +1,8 @@
+@import '../../stylesheet/constants/colors';
+@import '../../stylesheet/constants/variables';
+
+.header {
+  background-color: $main-gray;
+  color: $main-black;
+  height: $header-height;
+}

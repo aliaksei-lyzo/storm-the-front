@@ -1,0 +1,18 @@
+$header-height: 60px;
+$footer-height: 60px;
+
+$breakpoints: (
+  xxs: (max-width: 359px),
+  xs: (min-width: 360px),
+  xxs-sm: (max-width: 615px),
+  xs-sm: '(min-width: 360px) and (max-width: 615px)',
+  sm: (min-width: 616px),
+  sm-md: '(min-width: 616px) and (max-width: 783px)',
+  xxs-md: (max-width: 783px),
+  md: (min-width: 784px),
+  md-lg: '(min-width: 784px) and (max-width: 1023px)',
+  xxs-lg: (max-width: 1023px),
+  lg: (min-width: 1024px),
+  lg-xl: '(min-width: 1024px) and (max-width: 1439px)',
+  xl: (min-width: 1440px)
+) !default;

@@ -1,3 +1,5 @@
-.app {
- color: gray;
+@import '../../stylesheet/constants/variables';
+
+.content {
+  min-height: calc(100vh - #{$header-height + $footer-height});
 }
