@@ -23,3 +23,6 @@ Rebase and merge instructions:
 Quite often you'll face a situation, when an already opened PR faces conflicts. In that case, perform the steps above and just force push your branch, git will catch up all the changes.
 
 There's a wiki page on branching and merging procedure, where you can earn extra points, by commenting on the pros and cons of such approach (just edit the page) ;)
+
+# Tech requirements
+1) Please, utilize newest React features at most, abstain from classes, make use of functional components and hooks.
