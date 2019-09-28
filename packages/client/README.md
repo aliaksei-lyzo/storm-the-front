@@ -5,13 +5,6 @@ The portal / website for Gomel Front-end developers community "Storm The Front".
 Feel free to create branches in this repo (but beware, after PRs they will be removed without pity, unless labeled properly).
 Also, you can create forks and open PRs from your own forks, that works, too. Again, beware, forking won't save your branches from being ruthlessly deleted after merging PRs, unless labeled properly!
 
-# Starting the project:
-The project is a monorepo using yarn workspaces, so we've shifted to yarn as package manager.
-1) Clone the repo;
-2) Install yarn globally;
-3) Run 'yarn' to install node_modules;
-4) Run one of the scripts, stated in package.json in root folder to run corresponding scripts in packages.
-
 # The developer's guide:
 We will be using a common GitFlow strategy for our development cycle, with some changes.
 1) Instead of merging branches, we'll use rebase (DO NOT REBASE A PUBLIC BRANCH!) and fast-forward merge;
