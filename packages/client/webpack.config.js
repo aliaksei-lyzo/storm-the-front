@@ -12,8 +12,8 @@ module.exports = {
       cacheGroups: {
         commons: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all"
+          name: 'vendors',
+          chunks: 'all',
         }
       }
     }
@@ -29,7 +29,7 @@ module.exports = {
     contentBase: './dist',
     publicPath: '/',
     hot: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 
   resolve: {
@@ -61,10 +61,10 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
-              modules: true,
-              localIdentName: "[local]___[hash:base64:5]"
-            }
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
+            },
           },
           'postcss-loader',
           'sass-loader',

@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
@@ -9,17 +9,13 @@ import App from 'components/App';
 
 const store = configureStore();
 
-class AppContainer extends Component {
-  render() {
-    return (
-      <Provider store={store}>        
-          <BrowserRouter>
-            <App>{routes}</App>
-          </BrowserRouter>        
-      </Provider>
-    );
-  }
-}
+const AppContainer = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <App>{routes}</App>
+    </BrowserRouter>
+  </Provider>
+);
 
 /* propTypes declaration */
 AppContainer.propTypes = {};
