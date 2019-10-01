@@ -1,85 +1,13 @@
 {
+  "private": true,
   "name": "storm-the-front",
-  "version": "0.0.1",
-  "description": "storm the front project",
+  "workspaces": ["packages/*"],
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "build:dev": "cross-env NODE_ENV=development webpack --mode=development",
-    "eslint": "eslint ./src --ext js,jsx --max-warnings 5",
-    "test": "jest"
-  },
-  "keywords": [
-    "react",
-    "MCC",
-    "boilerplate",
-    "webpack",
-    "babel"
-  ],
-  "author": "Aliaksei Lyzo",
-  "license": "none",
-  "devDependencies": {
-    "@babel/core": "7.1.2",
-    "@babel/plugin-proposal-class-properties": "7.1.0",
-    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/preset-env": "7.1.0",
-    "@babel/preset-react": "7.0.0",
-    "autoprefixer": "9.1.5",
-    "babel-eslint": "10.0.1",
-    "babel-jest": "24.3.1",
-    "babel-loader": "8.0.4",
-    "clean-webpack-plugin": "0.1.19",
-    "css-loader": "1.0.0",
-    "enzyme": "3.9.0",
-    "enzyme-adapter-react-16": "1.10.0",
-    "eslint": "5.6.1",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-import-resolver-webpack": "0.10.1",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.1",
-    "eslint-plugin-react": "7.11.1",
-    "file-loader": "2.0.0",
-    "html-loader": "0.5.5",
-    "html-webpack-plugin": "3.2.0",
-    "husky": "1.3.1",
-    "jest": "24.3.1",
-    "mini-css-extract-plugin": "0.4.3",
-    "node-sass": "4.9.3",
-    "postcss-loader": "3.0.0",
-    "react-hot-loader": "4.3.11",
-    "sass-loader": "7.1.0",
-    "style-loader": "0.23.0",
-    "webpack": "4.20.2",
-    "webpack-cli": "3.1.2",
-    "webpack-dev-server": "3.1.9"
-  },
-  "dependencies": {
-    "babel-polyfill": "6.26.0",
-    "cross-env": "5.2.0",
-    "isomorphic-fetch": "2.2.1",
-    "prop-types": "15.6.1",
-    "react": "16.7.0",
-    "react-dom": "16.7.0",
-    "react-redux": "6.0.0",
-    "react-router": "4.3.1",
-    "react-router-dom": "4.3.1",
-    "redux": "4.0.1",
-    "redux-logger": "3.0.6",
-    "redux-thunk": "2.3.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run eslint && jest",
-      "pre-commit": "npm run eslint && jest"
-    }
-  },
-  "jest": {
-    "setupFiles": [
-      "./setupJest.js"
-    ],
-    "modulePaths": [
-      "<rootDir>/src/"
-    ]
+    "fe:start": "yarn workspace client start",
+    "fe:build:prod": "yarn workspace client build:prod",
+    "fe:build:dev": "yarn workspace client build:dev",
+    "fe:lint": "yarn workspace client eslint",
+    "fe:test": "yarn workspace client jest",
+    "be:start": "yarn workspace server start"
   }
 }
