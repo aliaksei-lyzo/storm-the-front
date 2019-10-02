@@ -8,8 +8,9 @@ const Home = lazy(() => import('components/Home'));
 
 /* lazy loading components */
 
+const fallback = () => <div>Loading component...</div>;
 const routes = (
-  <Suspense fallback={<div>Loading component...</div>}>
+  <Suspense fallback={fallback}>
     <Switch>
       <Route exact path="/" component={LandingPage} />
       <Route exact path="/Home" component={Home} />
