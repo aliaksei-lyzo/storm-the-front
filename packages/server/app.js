@@ -7,6 +7,19 @@ const usersRouter = require('./routes/users');
 
 const { combine, timestamp, printf } = winston.format;
 
+const MongoClient = require('mongodb').MongoClient;
+const MongoUri = 'mongodb://localhost:27017/';
+
+app.get('/', (req, res) => {
+  MongoClient.connect(MongoUri, { useNewUrlParser: true })
+  .then(client => {
+      //Add your logic
+  });
+  .catch(Error){
+    console.log("Mongo Error",Error);
+  }
+});
+
 const myFormat = printf(info => `${info.timestamp}: ${info.message}`);
 
 const logger = winston.createLogger({
