@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "Storm the front project client side",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "build:dev": "cross-env NODE_ENV=development webpack --mode=development",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack/client/dev.js --client-only",
+    "build:client:prod": "cross-env NODE_ENV=production OMIT_SOURCEMAP=true webpack --config webpack/client/prod.js --client-only",
+    "build:client:dev": "cross-env NODE_ENV=development webpack --config webpack/client/dev.js --client-only",
+    "build:server:prod": "cross-env NODE_ENV=production OMIT_SOURCEMAP=true webpack --config webpack/server/prod.js",
+    "build:server:dev": "cross-env NODE_ENV=development webpack --config webpack/server/dev.js",
     "eslint": "eslint ./src --ext js,jsx --max-warnings 5",
     "test": "jest"
   },
@@ -51,22 +53,31 @@
     "sass-loader": "8.0.0",
     "style-loader": "1.0.0",
     "webpack": "4.41.0",
+    "webpack-bundle-analyzer": "^3.5.2",
     "webpack-cli": "3.3.9",
     "webpack-dev-server": "3.8.1"
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "cors": "^2.8.5",
     "cross-env": "6.0.0",
+    "express": "^4.17.1",
     "isomorphic-fetch": "2.2.1",
     "prop-types": "15.7.2",
     "react": "16.10.1",
     "react-dom": "16.10.1",
+    "react-helmet": "^5.2.1",
+    "react-helmet-async": "^1.0.3",
+    "react-loadable-ssr-addon": "^0.1.9",
     "react-redux": "7.1.1",
     "react-router": "5.1.2",
     "react-router-dom": "5.1.2",
     "redux": "4.0.4",
     "redux-logger": "3.0.6",
-    "redux-thunk": "2.3.0"
+    "redux-thunk": "2.3.0",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-node-externals": "^1.7.2"
   },
   "husky": {
     "hooks": {
