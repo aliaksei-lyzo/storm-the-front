@@ -1,14 +1,25 @@
 {
   "private": true,
   "name": "storm-the-front",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "fe:start": "yarn workspace client start",
-    "fe:build:prod": "yarn workspace client build:prod",
-    "fe:build:dev": "yarn workspace client build:dev",
-    "fe:lint": "yarn workspace client eslint",
+    "fe:build:prod": "yarn workspace client build:client:prod",
+    "fe:build:dev": "yarn workspace client build:client:dev",
     "fe:test": "yarn workspace client jest",
     "be:start": "yarn workspace server start",
-    "be:lint": "yarn workspace server eslint"
+    "lint-staged:all": "yarn workspace client lint-staged && yarn workspace server lint-staged",
+    "lint:all": "yarn workspace client eslint && yarn workspace server eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint:all && npm run fe:test",
+      "pre-commit": "npm run lint-staged:all"
+    }
+  },
+  "dependencies": {
+    "husky": "^3.0.8"
   }
 }

@@ -4,7 +4,6 @@ import { createLogger } from 'redux-logger';
 import rootReducer from 'reducers';
 import { isDev } from 'utils/env';
 
-
 export default function configureStore(initialState) {
   const logger = createLogger();
 
@@ -15,12 +14,7 @@ export default function configureStore(initialState) {
     middlewares.push(logger);
     composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   }
-  const store = createStore(
-    rootReducer,
-    initialState, composeEnhancers(
-      applyMiddleware(...middlewares),
-    ),
-  );
+  const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(...middlewares)));
 
   if (module.hot) {
     module.hot.accept('reducers', () => {

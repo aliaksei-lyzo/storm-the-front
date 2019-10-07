@@ -9,6 +9,7 @@ export const addItem = item => ({
 });
 
 /* example async action */
-export const addItemAsync = item => dispatch => setTimeout(() => {
-  dispatch(addItem(item));
-}, 1000);
+export const addItemAsync = item => dispatch =>
+  setTimeout(() => {
+    dispatch(addItem(item));
+  }, 1000);

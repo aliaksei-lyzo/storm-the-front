@@ -4,7 +4,6 @@ import * as actions from 'actions/items';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-
 /* preload for ssr, can be promise as well, just an example */
 const fetchData = () => dispatch => dispatch(actions.addItem({ id: Math.random() }));
 
