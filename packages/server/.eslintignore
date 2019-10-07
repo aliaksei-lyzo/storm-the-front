@@ -1,5 +1,4 @@
-**/*.spec*
-webpack*
 node_modules/* 
 build/*
 *.json
+.webpack*

@@ -8,6 +8,7 @@
     "fe:build:dev": "yarn workspace client build:dev",
     "fe:lint": "yarn workspace client eslint",
     "fe:test": "yarn workspace client jest",
-    "be:start": "yarn workspace server start"
+    "be:start": "yarn workspace server start",
+    "be:lint": "yarn workspace server eslint"
   }
 }

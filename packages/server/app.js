@@ -11,43 +11,45 @@ const myFormat = printf(info => `${info.timestamp}: ${info.message}`);
 
 const logger = winston.createLogger({
   level: 'info',
-  format: combine(
-    timestamp(),
-    myFormat,
-  ),
-  transports: [
-    new winston.transports.File({ filename: 'general.log' }),
-  ]
+  format: combine(timestamp(), myFormat),
+  transports: [new winston.transports.File({ filename: 'general.log' })],
 });
 
 const app = express();
 
 app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({
-  extended: true,
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  }),
+);
 
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.url}`);
   next();
 });
 
-app.options('*', cors({
-  origin: true,
-  credentials: true,
-}));
+app.options(
+  '*',
+  cors({
+    origin: true,
+    credentials: true,
+  }),
+);
 
-app.use(cors({
-  origin: true,
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  }),
+);
 
 // app.use('/news', blogRouter);
 // app.use('/events', eventsRouter);
 app.use('/users', usersRouter);
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   console.log(err);
   res.status(500).json(err);
 });
