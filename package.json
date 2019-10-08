@@ -10,16 +10,27 @@
     "fe:build:dev": "yarn workspace client build:client:dev && yarn workspace client build:server:dev",
     "fe:test": "yarn workspace client test",
     "be:start": "yarn workspace server start",
-    "lint-staged:all": "yarn workspace client lint-staged && yarn workspace server lint-staged",
-    "lint:all": "yarn workspace client eslint && yarn workspace server eslint"
+    "ttt": "yarn workspace client eslint && yarn workspace server eslint"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint:all && npm run fe:test",
-      "pre-commit": "npm run lint-staged:all"
+      "pre-push": "yarn workspace client eslint && yarn workspace server eslint",
+      "pre-commit": "yarn workspace client lint-staged && yarn workspace server lint-staged"
     }
   },
-  "dependencies": {
-    "husky": "^3.0.8"
+  "devDependencies": {
+    "husky": "^3.0.8",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "babel-eslint": "10.0.3",
+    "nodemon": "1.19.2",
+    "prettier": "^1.18.2",
+    "eslint-import-resolver-webpack": "0.11.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.15.0"
   }
 }
