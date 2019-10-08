@@ -9,12 +9,6 @@
     "start": "nodemon app",
     "eslint": "eslint ./ --ext .js --max-warnings 5"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn run eslint",
-      "pre-commit": "yarn run lint-staged"
-    }
-  },
   "devDependencies": {
     "nodemon": "1.19.2"
   },

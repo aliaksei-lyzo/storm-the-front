@@ -11,12 +11,6 @@
     "eslint": "eslint ./src --ext .js,.jsx --max-warnings 5",
     "test": "jest"
   },
-  "husky": {	
-    "hooks": {	
-      "pre-push": "yarn run eslint && jest",	
-      "pre-commit": "yarn run lint-staged"	
-    }	
-  },
   "keywords": [
     "react",
     "MCC",
