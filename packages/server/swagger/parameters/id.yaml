@@ -1,0 +1,7 @@
+parameters:
+  id:
+    name: id
+    in: path
+    description: id
+    required: true
+    type: string
