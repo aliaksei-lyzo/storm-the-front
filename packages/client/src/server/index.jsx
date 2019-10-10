@@ -26,9 +26,8 @@ app.get('*', (req, res) => {
 
   const dataRequirements = routes
     .filter(route => matchPath(req.url, route))
-    .map(route => route.component)
-    .filter(comp => comp.serverFetch)
-    .map(comp => store.dispatch(comp.serverFetch()));
+    .filter(route => route.serverFetch)
+    .map(route => store.dispatch(route.serverFetch));
   Promise.all(dataRequirements).then(() => {
     const markup = renderToString(
       <Provider store={store}>

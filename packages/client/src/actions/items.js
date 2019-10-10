@@ -9,6 +9,11 @@ export const addItem = item => ({
 });
 
 /* example async action */
-export const addItemAsync = item => dispatch => setTimeout(() => {
-  dispatch(addItem(item));
-}, 1000);
+const asyncRequestMock = () => new Promise(resolve => {
+  setTimeout(() => {
+    resolve();
+  }, 100);
+});
+
+export const addItemAsync = item => dispatch => asyncRequestMock()
+  .then(() => dispatch(addItem(item)));
