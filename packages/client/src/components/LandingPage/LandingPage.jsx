@@ -1,49 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import * as actions from 'actions/items';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
-/* preload for ssr, can be promise as well, just an example */
-const fetchData = () => dispatch => dispatch(actions.addItem({ id: Math.random() }));
+import { useSelector, useDispatch } from 'react-redux';
 
-class LandingPage extends React.Component {
-  componentDidMount() {
-    const { items } = this.props;
+const LandingPage = () => {
+  const items = useSelector(state => state.itemsReducer.items);
+  const dispatch = useDispatch();
+  useEffect(() => {
     if (items.length <= 0) {
-      this.props.fetchData();
+      dispatch(actions.addItemAsync({ id: Math.random() }));
     }
-  }
+  }, []);
+  return (
+    <div>
+      <Helmet>
+        <title>Landing Page</title>
+      </Helmet>
+      <div>LANDING PAGE</div>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        <Helmet>
-          <title>Landing Page</title>
-        </Helmet>
-        <div>LANDING PAGE</div>
-      </div>
-    );
-  }
-}
-
-/* prefetch for ssr example */
-LandingPage.serverFetch = fetchData;
 /* propTypes declaration */
-LandingPage.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
-  fetchData: PropTypes.func,
-};
+LandingPage.propTypes = {};
 
-const mapStateToProps = state => ({
-  items: state.itemsReducer.items,
-});
-
-const mapDispatchToProps = {
-  fetchData,
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(LandingPage);
+export default React.memo(LandingPage);

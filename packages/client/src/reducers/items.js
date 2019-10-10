@@ -1,7 +1,7 @@
 import { ADD_ITEM } from '../actions/items';
 
 const initialStore = {
-  items: [{ id: 1 }],
+  items: [],
 };
 export default function itemsReducer(store = initialStore, action) {
   switch (action.type) {

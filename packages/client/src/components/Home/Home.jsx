@@ -11,4 +11,4 @@ const Home = () => [
 /* propTypes declaration */
 Home.propTypes = {};
 
-export default Home;
+export default React.memo(Home);
