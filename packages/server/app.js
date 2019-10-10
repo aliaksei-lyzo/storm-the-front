@@ -48,6 +48,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/', routes);
 
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   logger.error(err);
   res.status(httpStatus.NOT_FOUND).json(err);
