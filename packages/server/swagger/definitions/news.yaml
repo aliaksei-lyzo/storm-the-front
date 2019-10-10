@@ -1,0 +1,13 @@
+definitions:
+  News:
+    type: object
+    required:
+      - title
+      - body
+    properties:
+      title:
+        type: string
+        example: any title you wich
+      body:
+        type: string
+        example: any body you wich

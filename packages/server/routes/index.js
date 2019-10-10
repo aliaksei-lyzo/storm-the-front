@@ -1,9 +1,8 @@
 const express = require('express');
+const news = require('./news');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.status(200).send('USERS ROUTE');
-});
+router.use('/news', news);
 
 module.exports = router;

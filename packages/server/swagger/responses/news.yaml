@@ -1,0 +1,56 @@
+responses:
+  getAllNews:
+    type: object
+    description: Gets list of news
+    properties:
+      status:
+        type: string
+        example: success
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/News'
+  createNews:
+    type: object
+    description: Create news
+    properties:
+      status:
+        type: string
+        example: success
+      data:
+        type: object
+        items:
+          $ref: '#/definitions/News'
+  getNews:
+    type: object
+    description: Get specific news
+    properties:
+      status:
+        type: string
+        example: success
+      data:
+        type: object
+        items:
+          $ref: '#/definitions/News'
+  updateNews:
+    type: object
+    description: Update specific news
+    properties:
+      status:
+        type: string
+        example: success
+      data:
+        type: object
+        items:
+          $ref: '#/definitions/News'
+  removeNews:
+    type: object
+    description: Remove specific news
+    properties:
+      status:
+        type: string
+        example: success
+      data:
+        type: object
+        items:
+          $ref: '#/definitions/News'

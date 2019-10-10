@@ -9,8 +9,7 @@
     "fe:build:prod": "yarn workspace client build:client:prod && yarn workspace client build:server:prod",
     "fe:build:dev": "yarn workspace client build:client:dev && yarn workspace client build:server:dev",
     "fe:test": "yarn workspace client test",
-    "be:start": "yarn workspace server start",
-    "ttt": "yarn workspace client eslint && yarn workspace server eslint"
+    "be:start": "yarn workspace server start"
   },
   "husky": {
     "hooks": {
