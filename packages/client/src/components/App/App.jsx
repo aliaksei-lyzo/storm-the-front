@@ -8,7 +8,7 @@ import * as actions from 'actions/items';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-import style from './App.scss';
+import style from './App.module.scss';
 
 const App = ({ children }) => {
   const items = useSelector(state => state.itemsReducer.items);

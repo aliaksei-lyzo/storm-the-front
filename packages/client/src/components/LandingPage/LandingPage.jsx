@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import * as actions from 'actions/items';
 
-const LandingPage = () => <div>LANDING PAGE</div>;
+import { useSelector, useDispatch } from 'react-redux';
+
+const LandingPage = () => {
+  const items = useSelector(state => state.itemsReducer.items);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (items.length <= 0) {
+      dispatch(actions.addItemAsync({ id: Math.random() }));
+    }
+  }, []);
+  return (
+    <div>
+      <Helmet>
+        <title>Landing Page</title>
+      </Helmet>
+      <div>LANDING PAGE</div>
+    </div>
+  );
+};
 
 /* propTypes declaration */
-LandingPage.propTypes = {};
+LandingPage.propTypes = {
+};
 
-export default LandingPage;
+
+export default React.memo(LandingPage);

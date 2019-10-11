@@ -5,7 +5,7 @@ import rootReducer from 'reducers';
 import { isDev } from 'utils/env';
 
 
-export default function configureStore() {
+export default function configureStore(initialState) {
   const logger = createLogger();
 
   const middlewares = [thunkMiddleware];
@@ -17,7 +17,7 @@ export default function configureStore() {
   }
   const store = createStore(
     rootReducer,
-    /* preloadedState, */ composeEnhancers(
+    initialState, composeEnhancers(
       applyMiddleware(...middlewares),
     ),
   );

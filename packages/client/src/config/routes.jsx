@@ -1,21 +1,17 @@
-import React, { lazy, Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import Home from 'components/Home';
+import LandingPage from 'components/LandingPage';
+import * as actions from 'actions/items';
 
-/* lazy loading components */
-
-const LandingPage = lazy(() => import('components/LandingPage'));
-const Home = lazy(() => import('components/Home'));
-
-/* lazy loading components */
-
-const fallback = () => <div>Loading component...</div>;
-const routes = (
-  <Suspense fallback={fallback}>
-    <Switch>
-      <Route exact path="/" component={LandingPage} />
-      <Route exact path="/Home" component={Home} />
-    </Switch>
-  </Suspense>
-);
-
-export default routes;
+export default [
+  {
+    path: '/',
+    component: LandingPage,
+    exact: true,
+    serverFetch: actions.addItemAsync({ id: Math.random() }),
+  },
+  {
+    path: '/home',
+    component: Home,
+    exact: true,
+  },
+];
