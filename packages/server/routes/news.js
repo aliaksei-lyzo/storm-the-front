@@ -10,9 +10,9 @@ router
   .route('/')
   /**
    * @swagger
-   * /cities:
+   * /news:
    *   get:
-   *     description: Retrieve the full list of cities
+   *     description: Retrieve the full list of news
    *     tags:
    *       - news
    *     produces:
