@@ -23,8 +23,6 @@ const LandingPage = () => {
 };
 
 /* propTypes declaration */
-LandingPage.propTypes = {
-};
-
+LandingPage.propTypes = {};
 
 export default React.memo(LandingPage);

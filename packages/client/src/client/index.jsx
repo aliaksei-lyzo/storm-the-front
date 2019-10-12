@@ -5,4 +5,9 @@ import { HelmetProvider } from 'react-helmet-async';
 
 const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 
-renderMethod(<HelmetProvider><AppContainer /></HelmetProvider>, document.getElementById('app'));
+renderMethod(
+  <HelmetProvider>
+    <AppContainer />
+  </HelmetProvider>,
+  document.getElementById('app'),
+);

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { hot } from 'react-hot-loader';
-import { BrowserRouter } from 'react-router-dom';
 
 import configureStore from 'config/store';
 import routes from 'config/routes';
 import App from 'components/App';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 const store = configureStore(window.__APP_STATE);
 

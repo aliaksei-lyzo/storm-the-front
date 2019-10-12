@@ -41,4 +41,4 @@ App.propTypes = {
   children: PropTypes.element,
 };
 
-export default hot(module)(withRouter(React.memo((App))));
+export default hot(module)(withRouter(React.memo(App)));
