@@ -19,12 +19,13 @@
     "body-parser": "1.19.0",
     "cors": "2.8.5",
     "express": "4.17.1",
+    "express-validator": "6.2.0",
     "http-status": "1.4.0",
+    "husky": "3.0.8",
+    "lint-staged": "9.4.1",
     "mongoose": "5.7.4",
     "swagger-jsdoc": "3.4.0",
     "swagger-ui-express": "4.1.2",
-    "husky": "3.0.8",
-    "lint-staged": "9.4.1",
     "winston": "3.2.1"
   }
 }

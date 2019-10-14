@@ -2,6 +2,8 @@ const express = require('express');
 const httpStatus = require('http-status');
 const NewsController = require('../models/news/controller');
 const { sendSuccess, sendError } = require('../utils/responses');
+const { validate } = require('../utils/validator');
+const { newsValidationRules } = require('../models/news/newsValidator');
 
 const router = express.Router();
 
@@ -26,7 +28,7 @@ router
   .get((req, res) =>
     NewsController.findAll()
       .then(news => sendSuccess(res)(news))
-      .catch(e => sendError(res, httpStatus.BAD_REQUEST)(e)),
+      .catch(e => sendError(res, httpStatus.INTERNAL_SERVER_ERROR)(e)),
   )
   /**
    * @swagger
@@ -46,10 +48,10 @@ router
    *
    */
 
-  .post((req, res) =>
+  .post(newsValidationRules(), validate, (req, res) =>
     NewsController.create(req.body)
       .then(news => sendSuccess(res, httpStatus.CREATED)(news))
-      .catch(e => sendError(res, httpStatus.BAD_REQUEST)(e)),
+      .catch(e => sendError(res, httpStatus.INTERNAL_SERVER_ERROR)(e)),
   );
 
 router
@@ -75,7 +77,7 @@ router
   .get((req, res) =>
     NewsController.findById(req.params.id)
       .then(product => sendSuccess(res)(product))
-      .catch(e => sendError(res, httpStatus.BAD_REQUEST)(e)),
+      .catch(e => sendError(res, httpStatus.INTERNAL_SERVER_ERROR)(e)),
   )
   /**
    * @swagger
@@ -96,10 +98,10 @@ router
    *
    */
 
-  .put((req, res) =>
+  .put(newsValidationRules(), validate, (req, res) =>
     NewsController.updateById(req.params.id, req.body)
       .then(city => sendSuccess(res)(city))
-      .catch(e => sendError(res, httpStatus.BAD_REQUEST)(e)),
+      .catch(e => sendError(res, httpStatus.INTERNAL_SERVER_ERROR)(e)),
   )
   /**
    * @swagger
@@ -122,7 +124,7 @@ router
   .delete((req, res) =>
     NewsController.removeById(req.params.id)
       .then(city => sendSuccess(res)(city))
-      .catch(e => sendError(res, httpStatus.BAD_REQUEST)(e)),
+      .catch(e => sendError(res, httpStatus.INTERNAL_SERVER_ERROR)(e)),
   );
 
 module.exports = router;
