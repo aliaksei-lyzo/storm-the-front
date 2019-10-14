@@ -1,19 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const winston = require('winston');
+const httpStatus = require('http-status');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swagger');
 
-const usersRouter = require('./routes/users');
+const { logger } = require('./logger');
+const config = require('./config');
+const routes = require('./routes');
+const { connect } = require('./mongo');
 
-const { combine, timestamp, printf } = winston.format;
-
-const myFormat = printf(info => `${info.timestamp}: ${info.message}`);
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: combine(timestamp(), myFormat),
-  transports: [new winston.transports.File({ filename: 'general.log' })],
-});
+connect();
 
 const app = express();
 
@@ -45,13 +42,16 @@ app.use(
   }),
 );
 
-// app.use('/news', blogRouter);
-// app.use('/events', eventsRouter);
-app.use('/users', usersRouter);
+/* SWAGGER MIDDLEWARE */
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+/* SWAGGER MIDDLEWARE */
 
-app.use((err, req, res) => {
-  console.log(err);
-  res.status(500).json(err);
+app.use('/', routes);
+
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  logger.error(err);
+  res.status(httpStatus.NOT_FOUND).json(err);
 });
 
-app.listen(8081, () => console.log('Listening on port 8081'));
+app.listen(config.port, () => logger.info(`Listening on port ${config.port}`));

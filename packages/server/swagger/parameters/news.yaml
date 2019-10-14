@@ -1,0 +1,8 @@
+parameters:
+  news:
+    in: body
+    name: news
+    description: parameter contains news which describe news entity
+    required: true
+    schema:
+      $ref: '#/definitions/News'
