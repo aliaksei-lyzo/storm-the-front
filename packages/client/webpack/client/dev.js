@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: paths.clientBuild,
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].js',
   },
 
   devServer: {
@@ -16,6 +16,5 @@ module.exports = {
     publicPath: '/',
     hot: true,
     historyApiFallback: true,
-  }
-
+  },
 };

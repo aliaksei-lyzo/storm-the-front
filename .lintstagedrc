@@ -2,5 +2,9 @@
   "**/*.{js,jsx}": [
     "prettier --write",
     "git add"
+  ],
+  "*.css": [
+    "prettier --write",
+    "git add"
   ]
 }

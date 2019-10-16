@@ -5,6 +5,8 @@ import { hot } from 'react-hot-loader';
 import configureStore from 'config/store';
 import routes from 'config/routes';
 import App from 'components/App';
+import 'stylesheet/main.scss';
+
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 const store = configureStore(window.__APP_STATE);

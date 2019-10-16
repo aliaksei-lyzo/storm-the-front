@@ -1,9 +1,7 @@
 const paths = require('../paths');
 const plugins = require('../plugins');
 
-const {
-  client: clientLoaders
-} = require('../loaders');
+const { client: clientLoaders } = require('../loaders');
 
 module.exports = {
   entry: {
@@ -16,26 +14,19 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
-        }
-      }
-    }
+        },
+      },
+    },
   },
 
   resolve: {
     modules: paths.resolveModules,
 
-    extensions: [
-      '.js',
-      '.jsx',
-    ],
+    extensions: ['.js', '.jsx'],
   },
 
   module: {
-    rules: clientLoaders
-
+    rules: clientLoaders,
   },
-  plugins: [
-    ...plugins.shared,
-    ...plugins.client
-  ]
+  plugins: [...plugins.shared, ...plugins.client],
 };
