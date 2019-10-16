@@ -11,6 +11,6 @@ module.exports = {
   output: {
     path: paths.clientBuild,
     publicPath: '/',
-    filename: '[name]-[contenthash].js'
-  }
+    filename: '[name]-[contenthash].js',
+  },
 };

@@ -8,7 +8,7 @@
     "build:client:dev": "cross-env NODE_ENV=development webpack --config webpack/client/dev.js --client-only",
     "build:server:prod": "cross-env NODE_ENV=production OMIT_SOURCEMAP=true webpack --config webpack/server/prod.js",
     "build:server:dev": "cross-env NODE_ENV=development webpack --config webpack/server/dev.js",
-    "eslint": "eslint ./src --ext .js,.jsx --max-warnings 5",
+    "lint": "eslint ./src --ext .js,.jsx --max-warnings 5 && stylelint ./src/**/*.scss",
     "test": "jest"
   },
   "keywords": [

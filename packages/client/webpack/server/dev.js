@@ -1,7 +1,6 @@
 const baseConfig = require('./base');
 
-
-module.exports =  {
+module.exports = {
   mode: 'development',
-  ...baseConfig
-}
+  ...baseConfig,
+};
